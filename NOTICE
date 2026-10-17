@@ -1,0 +1,21 @@
+nvtop-rs
+Copyright (c) 2026 nvtop-rs contributors
+
+This product is an independent implementation of an interface that was
+recovered by observing the behaviour of a device driver on the author's own
+hardware. It contains no NVIDIA source code, no NVIDIA binary, no firmware and
+no dumped memory.
+
+Derivative interface documentation:
+  nvidia-smi, without nvidia-smi — reverse-engineering notes
+  https://github.com/zagg/nvidia-smi-clone-RE  (MIT, Copyright (c) 2026 zagg)
+  Files relied upon: include/nvrm.h, include/rusd.h, src/nvrm.c, src/fields.c,
+  docs/REVERSE_ENGINEERING.md, docs/FINDINGS.md.
+
+Structures and constants that NVIDIA ships under MIT with its open kernel module
+(class/cl00de.h, ctrl/ctrl2080/*.h, nvos.h, nvstatuscodes.h) are used as the
+reference for field layouts; only the facts they state are reproduced here.
+
+"NVIDIA", "NVIDIA-SMI", "NVML", "CUDA" and "GeForce"/"Quadro"/"RTX" are
+trademarks or registered trademarks of NVIDIA Corporation. This project is not
+affiliated with, sponsored or endorsed by NVIDIA Corporation.

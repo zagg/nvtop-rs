@@ -1,0 +1,23 @@
+[package]
+name        = "nvtop-rs"
+version     = "0.1.0"
+edition     = "2021"
+description = "Maximal GPU introspection, straight from the NVIDIA kernel driver - no NVML, no CUDA, no nvidia-smi"
+license     = "MIT"
+rust-version = "1.70"
+
+[[bin]]
+name = "nvtop-rs"
+path = "src/main.rs"
+
+# Volontairement AUCUNE dependance externe: le binaire ne lie que libc (via std)
+# et se construit aussi bien avec `cargo build --release` qu'avec un simple
+# `rustc -O src/main.rs -o nvinfo`.
+[dependencies]
+
+[profile.release]
+opt-level  = 2
+lto        = true
+panic      = "abort"
+strip      = true
+codegen-units = 1
